@@ -1,0 +1,12 @@
+@import './base.css';
+@import './theme.css';
+
+html, body {
+  margin: 0;
+}
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+  max-width: 100%;
+}

@@ -1,0 +1,85 @@
+:root {
+  /* Theme colors (light) */
+  --primary: #1a73e8;
+  --primary-600: #1667d1;
+  --accent: #ffb300;
+  --secondary: #e8eaed;
+
+  --bg: #ffffff;
+  --bg-soft: #f9fafb;
+  --panel: #ffffff;
+  --border: #e5e7eb;
+
+  --text: #111827;
+  --text-soft: #4b5563;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  height: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+input, textarea, select {
+  color: inherit;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-600);
+  border-color: var(--primary-600);
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.icon-btn:hover {
+  border-color: var(--primary);
+}
