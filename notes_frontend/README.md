@@ -1,45 +1,38 @@
-# vue-kavia
+# Notes Frontend (Vue 3 + Vite)
 
-This template should help get you started developing with Vue 3 in Vite.
+A modern, minimalistic notes manager. Features:
+- Create, view, edit, and delete notes
+- Search and filter by tag
+- Sort by last updated or title
+- Responsive UI for mobile and desktop
+- Light theme with brand colors (primary: #1a73e8, accent: #ffb300, secondary: #e8eaed)
 
-## Recommended IDE Setup
+## Quick start
+1) Install deps
+   npm install
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+2) Run dev server
+   npm run dev
 
-## Type Support for `.vue` Imports in TS
+3) Build for production
+   npm run build
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Environment variables
+Set these in your `.env` at project root (do not commit secrets):
+- VITE_APP_NAME: App title (default: "Notes")
+- VITE_STORAGE_KEY: localStorage key (default: "notes_app_storage_v1")
+- VITE_DEFAULT_SORT: "updated" | "title" (default: "updated")
 
-## Customize configuration
+Example:
+VITE_APP_NAME="My Notes"
+VITE_STORAGE_KEY="my_notes_app_v1"
+VITE_DEFAULT_SORT="updated"
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Project structure
+- src/stores/notes.ts: Pinia store with CRUD, search/filter, sorting, persistence
+- src/components/layout: Header and Sidebar
+- src/components/notes: NotesList and NoteEditor (modal)
+- src/App.vue: Layout composition
+- src/assets/theme.css: Theme and utility classes
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+The app persists notes in localStorage for simplicity and can later be switched to a backend API without changing the UI components significantly.
